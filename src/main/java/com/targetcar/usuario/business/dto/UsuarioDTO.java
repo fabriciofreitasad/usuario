@@ -10,7 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class UsuarioDTO {
-
+    
     private String name;
     private String email;
     private String senha;
