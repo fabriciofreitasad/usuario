@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/usuario")
 @RequiredArgsConstructor
 public class UsuarioController {
-
+    //Fabricio Freitas
     private final UsuarioService usuarioService;
     private final AuthenticationManager authenticationManager;
     private final JwtUtil jwtUtil;
