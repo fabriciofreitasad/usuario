@@ -10,8 +10,8 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class UsuarioDTO {
-    
-    private String name;
+
+    private String nome;
     private String email;
     private String senha;
     private List<EnderecoDTO> enderecos;
