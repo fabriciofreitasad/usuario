@@ -18,8 +18,8 @@ public class Endereco {
     @Column(name = "rua")
     private String rua;
     @Column(name = "numero")
-    private String numero;
-    @Column(name = "complemento", length = 100)
+    private Long numero;
+    @Column(name = "complemento", length = 10)
     private String complemento;
     @Column(name = "cidade", length = 150)
     private String cidade;
@@ -28,5 +28,5 @@ public class Endereco {
     @Column(name = "cep", length = 9)
     private String cep;
     @Column(name = "usuario_id")
-    private long usuario_id;
+    private Long usuario_id;
 }
