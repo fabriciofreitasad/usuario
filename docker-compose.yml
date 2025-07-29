@@ -11,6 +11,8 @@ services:
       SPRING_DATASOURCE_PASSWORD: 0000
     depends_on:
       - db
+    volumes:
+      - gradle-cache:/home/gradle/.gradle  # <-- aqui adiciona
 
   db:
     image: postgres:latest
@@ -20,3 +22,6 @@ services:
       POSTGRES_PASSWORD: 0000
     ports:
       - "5432:5432"
+
+volumes:
+  gradle-cache:

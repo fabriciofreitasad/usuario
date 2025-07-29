@@ -3,6 +3,7 @@ package com.targetcar.usuario.controller;
 import com.targetcar.usuario.infrastructure.exceptions.ConflictException;
 import com.targetcar.usuario.infrastructure.exceptions.ResourceNotFoundException;
 import com.targetcar.usuario.infrastructure.exceptions.UnauthorizedException;
+import com.targetcar.usuario.infrastructure.exceptions.IllegalArgumentException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
