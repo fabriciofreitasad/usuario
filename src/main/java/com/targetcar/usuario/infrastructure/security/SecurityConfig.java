@@ -21,10 +21,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 @SecurityScheme(name = SecurityConfig.SECURITY_SCHEME, type = SecuritySchemeType.HTTP,
-        bearerFormat = "JWT", scheme = "bearer")
+        bearerFormat = "JWT", scheme = "bearer") //swagger
 public class SecurityConfig {
 
-    public static final String SECURITY_SCHEME = "bearerAuth";
+    public static final String SECURITY_SCHEME = "bearerAuth"; //swagger
 
     // Instâncias de JwtUtil e UserDetailsService injetadas pelo Spring
     private final JwtUtil jwtUtil;
