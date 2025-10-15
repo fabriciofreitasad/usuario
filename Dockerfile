@@ -1,10 +1,13 @@
-FROM gradle:7.5-jdk17 as build
-WORKDIR /app
-COPY . .
-run gradle build --no-daemon
+# syntax=docker/dockerfile:1.7
+FROM gradle:8.10.2-jdk17 AS build
+WORKDIR /home/gradle/src
+COPY --chown=gradle:gradle . .
+RUN gradle --no-daemon clean bootJar -x test
 
-FROM openjdk:17-jdk-alpine
+FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
-COPY --from=build /app/build/libs/*.jar  /app/usuario.jar
+RUN addgroup -S app && adduser -S app -G app
+COPY --from=build /home/gradle/src/build/libs/*.jar /app/app.jar
 EXPOSE 8080
-CMD ["java", "-jar", "/app/usuario.jar"]
+USER app
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app/app.jar"]
